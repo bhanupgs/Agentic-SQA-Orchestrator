@@ -22,3 +22,8 @@ The framework operates as a decentralized network of autonomous agents coordinat
 Each agent is a specialized entity designed to handle one specific phase of the quality lifecycle.
 #### 1. Requirements Architect
 This agent acts as the "translator" for the system. It ingests technical documents—like PRDs, API specifications, or design docs—and outputs a structured JSON schema that defines exactly what needs to be tested. This ensures that the downstream agents have a single source of truth for the product's behavior.
+
+## Documentation
+- [Agent 1: Requirements Architect](./docs/requirements_architect.md)
+- [Agent 2: Test Strategy Planner](./docs/test_strategy_planner.md)
+- [Agent 3: SDET Automation Agent](./docs/sdet_automation_agent.md)
