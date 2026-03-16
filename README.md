@@ -11,3 +11,14 @@ This framework is an end-to-end Agentic AI workflow designed to automate the ful
     Utilizes Retrieval-Augmented Generation (RAG) to produce executable Python scripts that maintain a 95% automation success rate.
   **Resource Optimization:** 
     Scaled from a founding role to a high-performing team by positioning engineers as Orchestration Supervisors.
+
+## System Architecture
+The framework operates as a decentralized network of autonomous agents coordinated by a central orchestration engine.
+**Orchestration Layer:** Uses n8n to manage the state machine, decision branching, and feedback loops between agents.
+**Intelligence Layer:** Powered by LangFlow, defining the specific RAG (Retrieval-Augmented Generation) chains and prompt logic.
+**Execution Layer:** Leverages Antigravity to run generated Python scripts within a secure, sandboxed environment.
+
+### The Agents 
+Each agent is a specialized entity designed to handle one specific phase of the quality lifecycle.
+#### 1. Requirements Architect
+This agent acts as the "translator" for the system. It ingests technical documents—like PRDs, API specifications, or design docs—and outputs a structured JSON schema that defines exactly what needs to be tested. This ensures that the downstream agents have a single source of truth for the product's behavior.
