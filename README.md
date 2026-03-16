@@ -27,3 +27,47 @@ This agent acts as the "translator" for the system. It ingests technical documen
 - [Agent 1: Requirements Architect](./docs/requirements_architect.md)
 - [Agent 2: Test Strategy Planner](./docs/test_strategy_planner.md)
 - [Agent 3: SDET Automation Agent](./docs/sdet_automation_agent.md)
+
+## Quick Start & Installation
+This project is designed to run as a modular Python-based Multi-Agent System. You can run individual agents via the CLI or orchestrate them through a workflow engine like n8n.
+
+1. Prerequisites
+Python 3.10+
+An OpenAI API Key (or Gemini API Key with minor configuration changes in the agents)
+(Optional) n8n installed locally or via Cloud for workflow orchestration.
+
+2. Setup
+Clone the repository and install the required dependencies:
+
+git clone https://github.com/your-username/Agentic-SQA-Orchestrator.git
+cd Agentic-SQA-Orchestrator
+pip install -r requirements.txt
+
+3. Environment Configuration
+Create a .env file in the root directory to store your credentials securely:
+touch .env
+LLM_API_KEY=your_api_key_here   <--- in env file
+
+4. Running the Agents
+You can execute the agents independently to see the transformation of data through the pipeline.
+
+Step 1: Parse Requirements
+python requirements_architect.py
+
+Outputs a structured JSON Requirement Map from a sample technical specification.
+
+Step 2: Generate Strategy
+python test_strategy_planner.py
+
+Processes the Requirement Map to produce a risk-based Strategy Map and network topology.
+
+Step 3: Generate Automation Code
+python sdet_automation_agent.py
+
+Utilizes RAG-logic to generate executable Pytest scripts based on the Strategy Map.
+
+### Orchestration Logic (n8n)
+To run the full autonomous loop:
+Import the provided workflow JSON (to be added to /orchestration folder).
+Configure the HTTP Request Nodes to point to your local agent scripts or hosted endpoints.
+Trigger the workflow to see the end-to-end flow from Spec -> Code.
